@@ -1,0 +1,64 @@
+Task 1 – Parse a Single Line
+
+
+Input:
+2026-02-05 08:11:20 | ERROR | db | DB timeout
+
+Output:
+('2026-02-05 08:11:20', 'ERROR', 'db', 'DB timeout')
+
+
+
+Task 2 – Parse a List of Lines
+
+
+Input:
+[
+"2026-02-05 08:11:20 | ERROR | db | DB timeout",
+"BAD LINE WITHOUT SEPARATORS",
+"2026-02-05 08:11:25 | warn | api | Slow response (920ms)",
+"2026-02-05 | INFO | auth | ok | EXTRA"
+]
+
+Output:
+('2026-02-05 08:11:20', 'ERROR', 'db', 'DB timeout')
+('2026-02-05 08:11:25', 'warn', 'api', 'Slow response (920ms)')
+
+
+
+Task 3 – Parse a Log File
+
+
+Input:
+sample_logs.txt
+
+Output (first 5 valid lines):
+('2026-02-05 08:11:20', 'ERROR', 'db', 'DB timeout')
+('2026-02-05 08:11:25', 'INFO', 'auth', 'ok')
+('2026-02-05 08:12:01', 'WARN', 'api', 'Slow response')
+('2026-02-05 08:12:45', 'ERROR', 'cache', 'Cache miss')
+('2026-02-05 08:13:10', 'INFO', 'web', 'Request served')
+
+
+
+Task 4 – Count Invalid Format Lines
+
+
+Input:
+sample_logs.txt
+
+Output:
+Total lines: X
+Valid lines: Y
+Invalid format lines: Z
+
+
+
+Task 5 – Export Parsed Results to JSON
+
+
+Input:
+sample_logs.txt
+
+Output:
+parsed_logs.json created

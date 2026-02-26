@@ -3,13 +3,16 @@
 
 def parse_log_line(line: str):
     """Return (timestamp, level, service, message) OR None if invalid format."""
-    # TODO: 1) strip whole line
-    # TODO: 2) if empty -> return None
-    # TODO: 3) split by '|'
-    # TODO: 4) strip each part
-    # TODO: 5) if not exactly 4 parts -> return None
-    # TODO: 6) return tuple(parts)
-    pass
+    line = line.strip()
+    if not line:
+        return None
+
+    parts = line.split("|")
+    if len(parts) != 4:
+        return None
+
+    parts = [part.strip() for part in parts]
+    return tuple(parts)
 
 
 def run_tests():
